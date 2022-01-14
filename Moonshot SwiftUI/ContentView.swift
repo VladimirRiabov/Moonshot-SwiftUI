@@ -12,7 +12,7 @@ struct ContentView: View {
     let astronauts = Bundle.main.decode("astronauts.json")
     
     var body: some View {
-        Text("Text\(astronauts.count)   ")
+        Text("Text\(astronauts.count)55343")
         
     }
 }
