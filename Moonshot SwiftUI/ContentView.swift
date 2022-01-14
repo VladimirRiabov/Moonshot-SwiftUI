@@ -7,47 +7,21 @@
 
 import SwiftUI
 
-struct CustomText: View {
-    let text: String
-    
-    var body: some View {
-        Text(text)
-    }
-    init(_ text: String) {
-        print("Created new text")
-        self.text = text
-    }
-}
-
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack {
-            ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(0..<100) {_ in
-                        Image("Example")
-                            .resizable()
-                            .frame(width: 300, height: 300)
-                        
-                    }
+        NavigationView {
+            List(0..<100) { row in
+                NavigationLink {
+                    //содержимое открывающегося navigationView
+                    Text("NavigationView\(row)")
+                } label: {
+                    //название строки-кнопки
+                    Text("Navigation link \(row)")
                 }
-                
-            }
-            
-            ScrollView(.vertical) {
-                LazyVStack {
-                    ForEach(0..<100) {
-                        CustomText("Text\($0)")
-                        
-                    }
-                }
-                .frame(maxWidth: .infinity)
+                .navigationTitle("First view")
             }
         }
-       
-        
         
     }
 }
