@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-
+//коммент
 struct ContentView: View {
     let astronauts = Bundle.main.decode("astronauts.json")
     
